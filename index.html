@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugo Silva - Desenvolvedor Full Stack</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo_hs.png" />
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background-color: #0f1419; color: #e0e0e0; overflow-x: hidden; }
+        .hero-border { border: 2px solid #ff6b35; border-radius: 8px; }
+        .accent-purple { color: #9d4edd; }
+        .bg-dark-card { background-color: #1a1f2e; }
+        .nav-link { color: #9d4edd; text-decoration: none; font-weight: 500; font-size: 14px; transition: color 0.3s ease; }
+        .nav-link:hover { color: #ff6b35; }
+        .status-badge { background-color: #9d4edd; color: white; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; }
+        .decorative-square { width: 40px; height: 40px; border: 2px solid #9d4edd; border-radius: 4px; }
+        .dot-pattern { display: grid; grid-template-columns: repeat(5, 8px); gap: 8px; }
+        .dot { width: 8px; height: 8px; background-color: #ff6b35; border-radius: 50%; }
+        .btn-contact { background-color: transparent; border: 2px solid #ff6b35; color: #ff6b35; padding: 10px 24px; border-radius: 4px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-block; }
+        .btn-contact:hover { background-color: #ff6b35; color: #0f1419; }
+        .quote-section { border: 1px solid #9d4edd; border-radius: 8px; padding: 40px; margin: 60px 0; position: relative; }
+        .quote-mark { font-size: 48px; color: #9d4edd; opacity: 0.3; position: absolute; top: -10px; left: 20px; }
+        .quote-text { font-size: 24px; font-weight: 600; color: #e0e0e0; margin-bottom: 20px; }
+        .quote-author { color: #9d4edd; font-weight: 600; }
+        .work-card { background-color: #1a1f2e; border-radius: 8px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; }
+        .work-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(157, 78, 221, 0.25); }
+        .work-card-image { width: 100%; height: 190px; display: flex; align-items: center; justify-content: center; }
+        .work-card-content { padding: 20px; }
+        .work-card-title { font-size: 18px; font-weight: 700; color: #e0e0e0; margin-bottom: 10px; }
+        .work-card-desc { font-size: 14px; color: #a0a0a0; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; min-height: 68px; }
+        .skill-tag { display: inline-block; background-color: #9d4edd; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-right: 8px; margin-bottom: 8px; }
+        .about-section { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin: 10px 0; }
+        .about-image { width: 100%; max-height: 420px; object-fit: contain; border-radius: 8px; border: 2px solid #9d4edd; }
+        .contact-section { text-align: center; margin: 80px 0; }
+        .social-links { display: flex; justify-content: center; gap: 16px; margin-top: 30px; flex-wrap: wrap; }
+        .social-link { width: 52px; height: 52px; border: 2px solid #9d4edd; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #9d4edd; text-decoration: none; transition: all 0.3s ease; font-size: 18px; }
+        .social-link:hover { background-color: #9d4edd; color: #0f1419; }
+        .discord-handle { color: #9d4edd; font-size: 12px; margin-top: 10px; }
+        .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background-color: #1a1f2e; border-bottom: 1px solid #9d4edd; padding: 20px; z-index: 999; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 10px 0; color: #9d4edd; text-decoration: none; font-weight: 500; }
+        .works-swiper { padding-bottom: 16px; }
+        .works-controls { margin-top: 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .works-progress { width: 100%; max-width: 360px; height: 6px; background: rgba(157, 78, 221, 0.2); border-radius: 999px; overflow: hidden; }
+        .works-progress-fill { width: 0%; height: 100%; background: linear-gradient(90deg, #9d4edd, #ff6b35); transition: width 0.35s ease; }
+        .swiper-pagination-bullet { background: #9d4edd !important; opacity: .35 !important; }
+        .swiper-pagination-bullet-active { opacity: 1 !important; }
+        .project-modal { background: rgba(15, 20, 25, 0.75); }
+        @media (max-width: 768px) {
+            .about-section { grid-template-columns: 1fr; }
+            .hero-content { grid-template-columns: 1fr; }
+            .hero-image { order: -1; }
+            #home h1 { font-size: 2rem; line-height: 1.2; }
+            #home p { font-size: 0.95rem; }
+            .quote-text { font-size: 1.35rem; line-height: 1.35; }
+            .work-card-title { font-size: 1rem; }
+            .work-card-desc { font-size: 0.85rem; }
+            .skill-tag { font-size: 0.65rem; padding: 3px 8px; white-space: normal; line-height: 1.25; }
+            .work-card-content, .contact-section, .about-section, .quote-section { overflow-wrap: anywhere; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="fixed top-0 left-0 right-0 bg-dark-card bg-opacity-95 backdrop-blur-sm border-b border-purple-900 z-50">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 border-2 border-orange-500 rounded"><a href="#home"></a></div>
+                    <span class="text-white font-bold text-lg"><a href="#home">Hugo</a></span>
+                </a>
+            </div>
+
+            <div class="hidden md:flex gap-8">
+                <a href="#home" class="nav-link">home</a>
+                <a href="#works" class="nav-link">projetos</a>
+                <a href="#about" class="nav-link">sobre</a>
+                <a href="#contact" class="nav-link">contato</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-orange-500">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#home">home</a>
+            <a href="#works">projetos</a>
+            <a href="#about">sobre</a>
+            <a href="#contact">contato</a>
+        </div>
+    </nav>
+
+    <section id="home" class="pt-32 pb-20 md:pb-32 overflow-x-hidden">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="hero-border p-8 md:p-12 overflow-hidden">
+                <div class="hero-content grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight">
+                            Sou <span class="accent-purple">desenvolvedor full stack</span> atuando em <span class="accent-purple">soluções web</span>
+                        </h1>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Desenvolvo aplicações web robustas com foco em performance, manutenção e resultado real para o negócio.
+                        </p>
+                        <a href="#contact" class="btn-contact">Falar comigo</a>
+                    </div>
+
+                    <div class="hero-image relative flex justify-center items-center overflow-hidden">
+                        <img src="assets/img-removebg.png" alt="Hugo Silva" class="w-full max-w-xs h-80 object-contain rounded-lg">
+                        <div class="hidden md:block absolute top-12 right-0 space-y-3">
+                            <div class="decorative-square"></div>
+                            <div class="decorative-square" style="width: 30px; height: 30px;"></div>
+                        </div>
+                        <div class="hidden md:grid absolute bottom-12 right-0 dot-pattern">
+                            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="quote-section">
+                <div class="quote-mark">"</div>
+                <p class="quote-text">Código limpo, foco em resultado e evolução contínua.</p>
+                <p class="quote-author">— Hugo Silva</p>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="works" class="py-10">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Alguns projetos que <span class="accent-purple">atuei</span></h2>
+
+            <div class="swiper works-swiper">
+                <div id="works-wrapper" class="swiper-wrapper"></div>
+            </div>
+
+            <div class="works-controls">
+                <div id="works-pagination" class="swiper-pagination !relative !bottom-0"></div>
+                <div class="works-progress">
+                    <div id="works-progress-fill" class="works-progress-fill"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-10">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold">Sobre <span class="accent-purple">Mim</span></h2>
+
+            <div class="about-section">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Quem sou eu?</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">Sou Desenvolvedor Full Stack com foco em backend, arquitetura e integrações, com experiência profissional em Laravel, Node.js e manutenção de sistemas.</p>
+                    <p class="text-gray-400 mb-4 leading-relaxed">Atuo com bancos relacionais (MySQL, PostgreSQL e SQL Server), código legado em FuelPHP e interfaces modernas com Vue.js, Tailwind e Bootstrap.</p>
+                    <div class="mt-8">
+                        <h4 class="text-lg font-bold mb-4">Stack:</h4>
+                        <div>
+                            <span class="skill-tag">PHP</span><span class="skill-tag">JavaScript</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Laravel</span>
+                            <span class="skill-tag">Vue.js</span><span class="skill-tag">Node.js</span><span class="skill-tag">MySQL</span><span class="skill-tag">Docker</span><span class="skill-tag">Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#1a1f2e] border border-purple-900 rounded-lg p-6 font-mono text-sm leading-relaxed">
+                    <p class="text-gray-500">{</p>
+                    <p class="ml-4"><span class="text-purple-300">"experiencias"</span>:</p>
+                    <p class="ml-4 text-gray-300">[</p>
+
+                    <p class="ml-8 text-gray-300">{</p>
+                        <p class="ml-12 text-gray-300"><span class="text-purple-300">"empresa"</span>: <span class="text-orange-400">"Revelare Martech"</span>,</p>
+                        <p class="ml-12 text-gray-300"><span class="text-purple-300">"cargo"</span>: <span class="text-orange-400">"Desenvolvedor Full Stack"</span></p>
+                        <p class="ml-12 text-gray-300"><span class="text-purple-300">"periodo"</span>: <span class="text-orange-400">"04/2025 - 04/2026"</span>,</p>
+                    <p class="ml-8 text-gray-300">},</p>
+
+                    <p class="ml-8 text-gray-300">{</p>
+                        <p class="ml-12 text-gray-300"><span class="text-purple-300">"empresa"</span>: <span class="text-orange-400">"New Easy Tecnologia"</span>,</p>
+                        <p class="ml-12 text-gray-300"><span class="text-purple-300">"cargo"</span>: <span class="text-orange-400">"Desenvolvedor Full Stack"</span></p>
+                        <p class="ml-12 text-gray-300"><span class="text-purple-300">"periodo"</span>: <span class="text-orange-400">"01/2025 - 10/2025"</span>,</p>
+                    <p class="ml-8 text-gray-300">},</p>
+
+                    <p class="ml-8 text-gray-300">{</p>
+                        <p class="ml-12 text-gray-300"><span class="text-purple-300">"empresa"</span>: <span class="text-orange-400">"NEW WAY"</span>,</p>
+                        <p class="ml-12 text-gray-300"><span class="text-purple-300">"cargo"</span>: <span class="text-orange-400">"Analista de Sustentacao N1 / Service Desk"</span></p>
+                        <p class="ml-12 text-gray-300"><span class="text-purple-300">"periodo"</span>: <span class="text-orange-400">"01/2024 - 12/2024"</span>,</p>
+                    <p class="ml-8 text-gray-300">}</p>
+
+                    <p class="ml-4 text-gray-300">]</p>
+                    <p class="text-gray-500">}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-4">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="contact-section">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Fale <span class="accent-purple">comigo</span></h2>
+                <!-- <p class="text-gray-400 mb-8 text-lg">Estou sempre aberto a novas oportunidades e projetos interessantes</p> -->
+                <a href="mailto:ohugodev@outlook.com" class="btn-contact">Entrar em contato</a>
+                <div class="social-links">
+                    <a href="https://github.com/hugosbss" class="social-link" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/hugo-wg-silva23/" class="social-link" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="mailto:ohugodev@outlook.com" class="social-link"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="tel:+5514988365367" class="social-link" ><i class="fa-solid fa-phone"></i></a>
+                    <a href="https://discordapp.com/users/1093962406595661834" class="social-link" target="_blank" rel="noreferrer"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="project-modal" class="fixed inset-0 project-modal hidden z-[999]">
+        <div class="min-h-screen flex items-center justify-center p-4">
+            <div class="w-full max-w-2xl bg-[#1a1f2e] border border-purple-800 rounded-xl p-6">
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
+                        <p id="modal-stack" class="text-sm text-purple-300 mt-1"></p>
+                    </div>
+                    <button id="modal-close" class="text-purple-300 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <p id="modal-description" class="text-gray-300 mt-4 leading-relaxed"></p>
+                <a id="modal-link" href="#" target="_blank" rel="noreferrer" class="btn-contact mt-6">Visitar site</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const projects = [
+            {
+                id: 'digisac',
+                title: 'DIGISAC',
+                image: 'assets/digisac.png',
+                stack: 'Laravel, Filament e Livewire',
+                summary: 'Módulo de logs detalhado e notificações por e-mail para otimização de processos.',
+                description: 'Implementação de funcionalidades essenciais para o sistema DIGISAC, focado na otimização de processos e comunicação. Desenvolvi um módulo de logs detalhado para rastreamento de processos, utilizando o framework Laravel. Adicionalmente, integrei um sistema de notificações por e-mail, configurado para disparar alertas após cada etapa do cadastro de clientes e no gerenciamento de briefings e parceiros, empregando Observer e Enums.',
+                link: 'https://www.revelare.com.br/digisac/admin/login'
+            },
+            {
+                id: 'maskmais',
+                title: 'Maskmais',
+                image: 'assets/maskdistribuidora.png',
+                stack: 'Laravel, HTML e CSS (ApolloCMS)',
+                summary: 'Migração de FuelPHP para Laravel com CMS dinâmico para conteúdo.',
+                description: 'Realizei a modernização do website Maskmais, migrando-o de uma plataforma FuelPHP para Laravel, com integração do ApolloCMS (Statamic.dev). Esta atualização permitiu a criação de coleções dinâmicas gerenciáveis via CMS para elementos como banners, diferenciais, marcas, equipe, projetos e formulários de contato. Minha principal contribuição foi no desenvolvimento do módulo de produtos no CMS, abrangendo a criação de categorias, marcas e a vinculação entre eles, otimizando a gestão de conteúdo e a escalabilidade do site.',
+                link: 'https://maskdistribuidora.com.br/'
+            },
+            {
+                id: 'workmonitor',
+                title: 'Workmonitor',
+                image: 'assets/workmonitor.png',
+                stack: 'Laravel, HTML, Bootstrap e JavaScript (ApolloCMS)',
+                summary: 'Migração de plataforma com blog e áreas administráveis.',
+                description: 'Realizei a migração e atualização do website Workmonitor de uma plataforma Mobirise para um ambiente baseado em ApolloCMS, proporcionando uma gestão de conteúdo. O projeto envolveu a implementação de funcionalidades administráveis para blog, formulários de contato e banners, seguindo o design fornecido no Figma. Minha atuação garantiu a modernização da interface e a facilidade de manutenção do site.',
+                link: 'https://workmonitor.com/'
+            },
+            {
+                id: 'gustare',
+                title: 'Gustare',
+                image: 'assets/gustare.png',
+                stack: 'Laravel, HTML, JavaScript e Tailwind CSS (ApolloCMS)',
+                summary: 'Site responsivo com CMS dinâmico e integração de carrosséis.',
+                description: 'Atuei no desenvolvimento do website Gustare, transformando o design do Figma em uma experiência de usuário moderna e responsiva. Implementei o CMS para gerenciamento de conteúdo dinâmico, incluindo banners, serviços, depoimentos de clientes e formulários. A utilização de Swiper para carrosséis e a integração com Tailwind CSS resultaram em um layout visualmente atraente e de fácil manutenção.',
+                link: 'https://gustare.com.br/'
+            },
+            {
+                id: 'controlarc',
+                title: 'Controlarc',
+                image: 'assets/controlarc.png',
+                stack: 'Laravel, HTML, JavaScript e Tailwind CSS (ApolloCMS)',
+                summary: 'Reestruturação completa para CMS totalmente administrável.',
+                description: 'Realizei a reestruturação completa do website Controlarc, convertendo-o em uma plataforma totalmente administrável via CMS. Anteriormente, apenas banners e produtos eram gerenciáveis; agora, todos os elementos visuais e textuais, como cores, imagens, textos, botões e menus, podem ser editados dinamicamente. Esta intervenção aumentou significativamente a flexibilidade e autonomia do cliente na gestão do conteúdo do site.',
+                link: 'https://controlarc.com.br/'
+            },
+            {
+                id: 'vibrosystems',
+                title: 'Vibrosystems',
+                image: 'assets/vibrosystems.png',
+                stack: 'PHP e FuelPHP',
+                summary: 'Atualização visual e correções críticas de formulários.',
+                description: 'Contribuí para a atualização do website legado da Vibrosystems, atuando tanto no backend quanto no frontend. No frontend, foquei na renovação da identidade visual dos produtos. No backend, realizei a correção de falhas no sistema de envio de formulários, garantindo a funcionalidade e a confiabilidade da comunicação com os clientes.',
+                link: 'https://www.vibrosystems.pt/'
+            },
+            {
+                id: 'dagra',
+                title: 'Dagra',
+                image: 'assets/dagra.png',
+                stack: 'PHP e FuelPHP',
+                summary: 'Sistema de notificações internas e por e-mail para produção.',
+                description: 'Implementei um sistema robusto de notificações para o sistema DAGRA, essencial para o acompanhamento das etapas de produção na fábrica. Desenvolvi notificações internas no sistema e por e-mail, utilizando PHPMailer, para informar sobre o status de cada fase. Esta funcionalidade otimizou a comunicação interna e a visibilidade do processo produtivo.',
+                link: 'https://dagra.com.br/'
+            },
+            {
+                id: 'tudor',
+                title: 'Tudor',
+                image: 'assets/tudor.png',
+                stack: 'PHP e FuelPHP',
+                summary: 'Módulo de blog completo com SEO e suporte multilíngue.',
+                description: 'Atuei no desenvolvimento do website Tudor, com foco na implantação do módulo de blog completo. No frontend, repliquei o design do Figma para a listagem e páginas internas do blog. No backend, criei um módulo administrativo (tudor.com.br/controle) que permite a publicação e gestão de conteúdo do blog em múltiplos idiomas (PT, ES, EN), incluindo a edição de textos, imagens e a inserção de tags de SEO (meta title e description) para otimização em motores de busca. O projeto foi desenvolvido sobre uma base de código legado em FuelPHP e PHP.',
+                link: 'https://tudor.com.br/'
+            }
+        ];
+
+        const worksWrapper = document.getElementById('works-wrapper');
+        const progressFill = document.getElementById('works-progress-fill');
+
+        worksWrapper.innerHTML = projects.map((project, index) => `
+            <div class="swiper-slide">
+                <div class="work-card">
+                    <div class="work-card-image">
+                        <img src="${project.image}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="work-card-content">
+                        <div class="work-card-title">${project.title}</div>
+                        <div class="work-card-desc">${project.summary}</div>
+                        <div style="margin-top: 12px;"><span class="skill-tag">${project.stack}</span></div>
+                        <button class="btn-contact mt-4 open-project" data-index="${index}">Ver descrição</button>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        const worksSwiper = new Swiper('.works-swiper', {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false
+            },
+            pagination: {
+                el: '#works-pagination',
+                clickable: true
+            },
+            breakpoints: {
+                768: { slidesPerView: 2, slidesPerGroup: 2 },
+                1024: { slidesPerView: 3, slidesPerGroup: 3 }
+            }
+        });
+
+        function updateProgress() {
+            const group = worksSwiper.params.slidesPerGroup || 1;
+            const totalPages = Math.ceil(projects.length / group);
+            const currentPage = Math.floor(worksSwiper.realIndex / group) + 1;
+            const percent = (currentPage / totalPages) * 100;
+            progressFill.style.width = `${percent}%`;
+        }
+
+        worksSwiper.on('init', updateProgress);
+        worksSwiper.on('slideChange', updateProgress);
+        updateProgress();
+
+        const modal = document.getElementById('project-modal');
+        const modalClose = document.getElementById('modal-close');
+        const modalTitle = document.getElementById('modal-title');
+        const modalStack = document.getElementById('modal-stack');
+        const modalDescription = document.getElementById('modal-description');
+        const modalLink = document.getElementById('modal-link');
+
+        function openModal(index) {
+            const project = projects[index];
+            modalTitle.textContent = project.title;
+            modalStack.textContent = project.stack;
+            modalDescription.textContent = project.description;
+            modalLink.href = project.link;
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        document.addEventListener('click', (event) => {
+            const trigger = event.target.closest('.open-project');
+            if (trigger) {
+                openModal(Number(trigger.dataset.index));
+            }
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        modalClose.addEventListener('click', closeModal);
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeModal();
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
