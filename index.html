@@ -262,6 +262,10 @@
             padding-bottom: 16px;
         }
 
+        .study-swiper {
+            padding-bottom: 16px;
+        }
+
         .works-controls {
             margin-top: 20px;
             display: flex;
@@ -286,6 +290,71 @@
             transition: width 0.35s ease;
         }
 
+        .study-card {
+            background: linear-gradient(180deg, #1a1f2e 0%, #141928 100%);
+            border: 1px solid rgba(157, 78, 221, 0.35);
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .study-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(157, 78, 221, 0.24);
+        }
+
+        .study-embed-wrap {
+            width: 100%;
+            height: 260px;
+            background: #0f1419;
+            border-bottom: 1px solid rgba(157, 78, 221, 0.25);
+        }
+
+        .study-embed {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .study-card-content {
+            padding: 18px;
+        }
+
+        .study-card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #e0e0e0;
+            min-height: 52px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .study-card-desc {
+            margin-top: 10px;
+            font-size: 0.88rem;
+            color: #b4b4b4;
+            line-height: 1.5;
+            min-height: 96px;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .study-meta {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: #d6b4ff;
+            background: rgba(157, 78, 221, 0.18);
+            border: 1px solid rgba(157, 78, 221, 0.35);
+            padding: 4px 10px;
+            border-radius: 999px;
+            margin-bottom: 10px;
+        }
+
         .swiper-pagination-bullet {
             background: #9d4edd !important;
             opacity: .35 !important;
@@ -297,6 +366,54 @@
 
         .project-modal {
             background: rgba(15, 20, 25, 0.75);
+        }
+
+        .video-section-card {
+            background-color: #1a1f2e;
+            border: 1px solid rgba(157, 78, 221, 0.4);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .video-section-layout {
+            display: grid;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .video-description {
+            order: 1;
+        }
+
+        .video-media {
+            order: 2;
+            display: flex;
+            justify-content: center;
+        }
+
+        .video-preview {
+            width: min(80%, 300px);
+            border-radius: 10px;
+            border: 1px solid rgba(157, 78, 221, 0.45);
+            background: #000;
+        }
+
+        @media (min-width: 768px) {
+            .video-section-layout {
+                grid-template-columns: 300px 1fr;
+                align-items: center;
+            }
+
+            .video-media {
+                order: 1;
+            }
+
+            .video-description {
+                order: 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
         }
 
         @media (max-width: 768px) {
@@ -363,6 +480,7 @@
             <div class="hidden md:flex gap-8">
                 <a href="#home" class="nav-link">home</a>
                 <a href="#works" class="nav-link">projetos</a>
+                <a href="#study-content" class="nav-link">conteudos</a>
                 <a href="#about" class="nav-link">sobre</a>
                 <a href="#contact" class="nav-link">contato</a>
             </div>
@@ -378,6 +496,8 @@
         <div id="mobile-menu" class="mobile-menu">
             <a href="#home">home</a>
             <a href="#works">projetos</a>
+            <a href="#study-content">conteudos</a>
+            <a href="#scrollflow-video">video</a>
             <a href="#about">sobre</a>
             <a href="#contact">contato</a>
         </div>
@@ -457,6 +577,53 @@
         </div>
     </section>
 
+    <section id="study-content" class="py-10">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Conteudos <span class="accent-purple">Didaticos</span></h2>
+            <p class="text-gray-400 mb-7 max-w-3xl leading-relaxed">
+                Materiais que produzi para apresentações e estudo pratico de backend e frontend, com foco em fundamentos que aplico no dia a dia em projetos reais.
+            </p>
+
+            <div class="swiper study-swiper">
+                <div id="study-wrapper" class="swiper-wrapper"></div>
+            </div>
+
+            <div class="works-controls">
+                <div id="study-pagination" class="swiper-pagination !relative !bottom-0"></div>
+                <div class="works-progress">
+                    <div id="study-progress-fill" class="works-progress-fill"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="scrollflow-video" class="py-10">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="video-section-card">
+                <div class="video-section-layout">
+                    <div class="video-description md:text-center">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4">Demo com <span class="accent-purple">ScrollFlow.js</span></h2>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            Neste vídeo, apresento a implementação do ScrollFlow em um site replicado, destacando como a biblioteca organiza uma navegação por seções com sobreposição durante o scroll. A proposta do ScrollFlow é oferecer uma experiência mais imersiva com transições suaves entre blocos de conteúdo.
+                        </p>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Referencias:
+                                <a class="text-purple-300 hover:text-orange-400" href="https://scrollflowjs.com/" target="_blank" rel="noreferrer">scrollflowjs.com</a>
+                            e
+                                <a class="text-purple-300 hover:text-orange-400" href="https://www.jsdelivr.com/package/npm/scrollflow" target="_blank" rel="noreferrer">jsDelivr (npm/scrollflow)</a>.
+                        </p>
+                    </div>
+                    <div class="video-media">
+                        <video class="video-preview" controls preload="metadata" playsinline>
+                            <source src="assets/ScrollFlow.mp4" type="video/mp4">
+                            Seu navegador nao suporta video HTML5.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="about" class="py-10">
         <div class="max-w-7xl mx-auto px-4 md:px-8">
             <h2 class="text-4xl md:text-5xl font-bold">Sobre <span class="accent-purple">mim:</span></h2>
@@ -464,11 +631,15 @@
             <div class="about-section">
                 <div>
                     <h3 class="text-2xl font-bold mb-4">Quem sou eu?</h3>
-                    <p class="text-gray-400 mb-4 leading-relaxed">Sou Desenvolvedor Full Stack com foco em backend,
-                        arquitetura e integrações, com experiência profissional em Laravel, Node.js e manutenção de
-                        sistemas.</p>
-                    <p class="text-gray-400 mb-4 leading-relaxed">Atuo com bancos relacionais (MySQL, PostgreSQL e SQL
-                        Server), código legado em FuelPHP e interfaces modernas com Vue.js, Tailwind e Bootstrap.</p>
+                    
+                    <p class="text-gray-400 mb-4 leading-relaxed">Sou Desenvolvedor Full Stack, com experiência no desenvolvimento, manutenção e evolução de aplicações web.</p>
+
+                    <p class="text-gray-400 mb-4 leading-relaxed">Atuo com Laravel e Node.js na construção de APIs REST, regras de negócio e integrações entre sistemas, além de desenvolver interfaces modernas e responsivas utilizando Vue.js, Angular e React.</p>
+
+                    <p class="text-gray-400 mb-4 leading-relaxed">Tenho experiência com bancos de dados relacionais (MySQL, PostgreSQL e SQL Server), bem como na manutenção e modernização de sistemas legados em FuelPHP.</p>
+
+                    <p class="text-gray-400 mb-4 leading-relaxed">Também possuo experiência na construção de diferentes tipos de aplicações web, incluindo landing pages, sites institucionais, SPAs, sistemas web completos e aplicações com backend estruturado, com foco em performance, organização e escalabilidade.</p>
+
                     <div class="mt-8">
                         <h4 class="text-lg font-bold mb-4">Stack:</h4>
                         <div>
@@ -503,7 +674,7 @@
                     <p class="ml-12 text-gray-300"><span class="text-purple-300">"cargo"</span>: <span
                             class="text-orange-400">"Desenvolvedor Full Stack"</span></p>
                     <p class="ml-12 text-gray-300"><span class="text-purple-300">"periodo"</span>: <span
-                            class="text-orange-400">"04/2025 - 04/2026"</span>,</p>
+                            class="text-orange-400">"04/2025 - 06/2026"</span>,</p>
                     <p class="ml-8 text-gray-300">},</p>
 
                     <p class="ml-8 text-gray-300">{</p>
@@ -647,6 +818,46 @@
 
         const worksWrapper = document.getElementById('works-wrapper');
         const progressFill = document.getElementById('works-progress-fill');
+        const studyWrapper = document.getElementById('study-wrapper');
+        const studyProgressFill = document.getElementById('study-progress-fill');
+
+        const studyContents = [
+            {
+                title: 'EloquentORM',
+                level: 'Leitura aproximada: 20-40 min',
+                description: 'Introducao completa ao Eloquent ORM do Laravel para transformar SQL em codigo PHP elegante. Cobre criacao de modelos, consultas eficientes e operacoes CRUD com exemplos diretos e boas praticas para ganhar seguranca na camada de dados.',
+                embed: 'https://docs.google.com/presentation/d/1GuDTd8F_0m7wLQGBMD91q9DKaHxsBOSkchDKt9dyd-Q/embed?start=false&loop=false&delayms=3000',
+                link: 'https://docs.google.com/presentation/d/1GuDTd8F_0m7wLQGBMD91q9DKaHxsBOSkchDKt9dyd-Q/edit?usp=sharing'
+            },
+            {
+                title: 'EloquentORM Relacionamentos e Introducao ao Middleware',
+                level: 'Leitura aproximada: 20-60 min',
+                description: 'Continuidade avancada do Eloquent com foco em relacionamentos One-to-One, One-to-Many, Many-to-Many, etc. Finaliza com introducao pratica a Middleware e pipeline HTTP para preparar estruturas de seguranca e autorizacao.',
+                embed: 'https://docs.google.com/presentation/d/1IJuEN1qi1zoYdraGapWhiTPXPYHyrcJyAXnwQEZs89U/embed?start=false&loop=false&delayms=3000',
+                link: 'https://docs.google.com/presentation/d/1IJuEN1qi1zoYdraGapWhiTPXPYHyrcJyAXnwQEZs89U/edit?usp=sharing'
+            },
+            {
+                title: 'Middleware',
+                level: 'Leitura aproximada: 30-60 min',
+                description: 'Aprofundamento em Middleware no Laravel: arquitetura, ciclo de vida da requisicao, middlewares globais x de rota, criacao de middlewares customizados e ordem de execucao. Inclui padroes de design, performance e fluxo robusto de validacao e controle.',
+                embed: 'https://docs.google.com/presentation/d/1aVznqdZp9mt1rQrgLA6zw5HUcw3BztZ3htT4ZCPuwf0/embed?start=false&loop=false&delayms=3000',
+                link: 'https://docs.google.com/presentation/d/1aVznqdZp9mt1rQrgLA6zw5HUcw3BztZ3htT4ZCPuwf0/edit?usp=sharing'
+            },
+            {
+                title: 'Autenticacao e Seguranca (Middleware)',
+                level: 'Leitura aproximada: 30-60 min',
+                description: 'Guia de autenticacao e seguranca em Laravel usando Middleware como camada de protecao. Aborda login, registro, sessao e tokens, RBAC, alem de defesa contra CSRF, XSS e SQL Injection com foco em criptografia, hashing, auditoria e rastreabilidade.',
+                embed: 'https://docs.google.com/presentation/d/1aVznqdZp9mt1rQrgLA6zw5HUcw3BztZ3htT4ZCPuwf0/embed?start=false&loop=false&delayms=3000',
+                link: 'https://docs.google.com/presentation/d/1aVznqdZp9mt1rQrgLA6zw5HUcw3BztZ3htT4ZCPuwf0/edit?usp=sharing'
+            },
+            {
+                title: 'Frontend Dinamico',
+                level: 'Leitura aproximada: 30-60 min',
+                description: 'Exploracao pratica de frontend dinamico com JavaScript moderno. Compara abordagens para DOM, eventos, Fetch API, reatividade, componentes reutilizaveis, validacao de formularios e animacoes, com foco em interfaces leves e alta performance.',
+                embed: 'https://docs.google.com/presentation/d/16UCSb6LK28aZL25_rCGsGpriFgC8V4xJsnJIVraEBx0/embed?start=false&loop=false&delayms=3000',
+                link: 'https://docs.google.com/presentation/d/16UCSb6LK28aZL25_rCGsGpriFgC8V4xJsnJIVraEBx0/edit?usp=sharing'
+            }
+        ];
 
         worksWrapper.innerHTML = projects.map((project, index) => `
             <div class="swiper-slide">
@@ -661,6 +872,28 @@
                         <button class="btn-contact mt-4 open-project" data-index="${index}">Ver descrição</button>
                     </div>
                 </div>
+            </div>
+        `).join('');
+
+        studyWrapper.innerHTML = studyContents.map((content) => `
+            <div class="swiper-slide">
+                <article class="study-card">
+                    <div class="study-embed-wrap">
+                        <iframe
+                            class="study-embed"
+                            src="${content.embed}"
+                            allowfullscreen
+                            loading="lazy"
+                            title="${content.title}">
+                        </iframe>
+                    </div>
+                    <div class="study-card-content">
+                        <span class="study-meta">${content.level}</span>
+                        <h3 class="study-card-title">${content.title}</h3>
+                        <p class="study-card-desc">${content.description}</p>
+                        <a href="${content.link}" target="_blank" rel="noreferrer" class="btn-contact mt-4">Ver Apresentacão</a>
+                    </div>
+                </article>
             </div>
         `).join('');
 
@@ -682,6 +915,24 @@
             }
         });
 
+        const studySwiper = new Swiper('.study-swiper', {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false
+            },
+            pagination: {
+                el: '#study-pagination',
+                clickable: true
+            },
+            breakpoints: {
+                768: { slidesPerView: 2, slidesPerGroup: 2 },
+                1024: { slidesPerView: 2, slidesPerGroup: 2 }
+            }
+        });
+
         function updateProgress() {
             const group = worksSwiper.params.slidesPerGroup || 1;
             const totalPages = Math.ceil(projects.length / group);
@@ -690,9 +941,20 @@
             progressFill.style.width = `${percent}%`;
         }
 
+        function updateStudyProgress() {
+            const group = studySwiper.params.slidesPerGroup || 1;
+            const totalPages = Math.ceil(studyContents.length / group);
+            const currentPage = Math.floor(studySwiper.realIndex / group) + 1;
+            const percent = (currentPage / totalPages) * 100;
+            studyProgressFill.style.width = `${percent}%`;
+        }
+
         worksSwiper.on('init', updateProgress);
         worksSwiper.on('slideChange', updateProgress);
         updateProgress();
+        studySwiper.on('init', updateStudyProgress);
+        studySwiper.on('slideChange', updateStudyProgress);
+        updateStudyProgress();
 
         const modal = document.getElementById('project-modal');
         const modalClose = document.getElementById('modal-close');
