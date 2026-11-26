@@ -1,4 +1,8 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const rootDirectory = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig(({ command }) => ({
   base: command === 'build' ? '/portfolio/' : '/',
@@ -7,5 +11,11 @@ export default defineConfig(({ command }) => ({
     chunkSizeWarningLimit: 600,
     outDir: 'dist',
     emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: resolve(rootDirectory, 'index.html'),
+        privacy: resolve(rootDirectory, 'privacidade.html'),
+      },
+    },
   },
 }));

@@ -1,4 +1,5 @@
 import './styles.css';
+import './privacy-consent.js';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { featuredProjects, projects } from './data/projects.js';
@@ -320,4 +321,5 @@ contactForm.addEventListener('submit', (event) => {
 if (document.fonts?.ready) {
   document.fonts.ready.then(() => ScrollTrigger.refresh());
 }
+document.addEventListener('privacy:fonts-loaded', () => ScrollTrigger.refresh());
 window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
