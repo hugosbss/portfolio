@@ -1,26 +1,26 @@
 # Hugo Silva — Desenvolvedor Full Stack
 
-> Portfólio profissional de Hugo Silva, desenvolvedor Full Stack com experiência em aplicações web, APIs REST e integrações de sistemas.
+> Portfólio profissional de Hugo Silva, desenvolvedor Full Stack com experiência em aplicações web, APIs REST e integrações entre sistemas.
 
 ## Sobre
 
-Hugo Silva trabalha no desenvolvimento, manutenção e evolução de aplicações web. Sua experiência inclui backend com Laravel, PHP, Node.js e NestJS, interfaces com React, Next.js, Vue.js e Angular, bancos de dados relacionais e integração entre sistemas.
+Hugo Silva atua no desenvolvimento, na manutenção e na evolução de aplicações web. Sua experiência inclui o back-end com Laravel, PHP, Node.js e NestJS; interfaces com React, Next.js, Vue.js e Angular; bancos de dados relacionais; e integração entre sistemas.
 
 ## Competências
 
 - Desenvolvimento de aplicações web e sistemas responsivos.
-- Criação e manutenção de APIs REST e integrações entre sistemas.
+- Criação e manutenção de APIs REST e integração entre sistemas.
 - Tecnologias: Laravel, PHP, Node.js, NestJS, React, Next.js, Vue.js, Angular, MySQL, PostgreSQL e Docker.
 
 ## Projetos
 
 O portfólio apresenta trabalhos em sistemas web, sites institucionais, CMS, formulários, notificações, manutenção de sistemas legados e ferramentas internas.
 
-- [Projetos selecionados](https://hugosbss.github.io/portfolio/#projetos): DIGISAC, Maskmais, Workmonitor, Gustare, Control Arc, Vibrosystems, Dagra e Tudor. Quatro projetos ganham destaque em uma navegação visual em profundidade.
+- [Projetos selecionados](https://hugosbss.github.io/portfolio/#projetos): DIGISAC, Maskmais, Workmonitor, Gustare, Control Arc, Vibrosystems, Dagra e Tudor. Quatro projetos são apresentados em destaque em uma navegação visual em profundidade.
 
 ## Conteúdos técnicos
 
-- [Materiais de desenvolvimento web](https://hugosbss.github.io/portfolio/#conteudos): estudos sobre Laravel Eloquent ORM, Middleware, autenticação, segurança e JavaScript para frontend.
+- [Materiais de desenvolvimento web](https://hugosbss.github.io/portfolio/#conteudos): estudos sobre Eloquent ORM, relacionamentos, middleware, autenticação, segurança e JavaScript para front-end.
 - [Demonstração de ScrollFlow.js](https://hugosbss.github.io/portfolio/#scrollflow): exemplo de navegação por seções com transições durante a rolagem.
 
 ## Contato
