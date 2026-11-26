@@ -1,0 +1,30 @@
+# Hugo Silva — Desenvolvedor Full Stack
+
+> Portfólio profissional de Hugo Silva, desenvolvedor Full Stack com experiência em aplicações web, APIs REST e integrações de sistemas.
+
+## Sobre
+
+Hugo Silva trabalha no desenvolvimento, manutenção e evolução de aplicações web. Sua experiência inclui backend com Laravel, PHP, Node.js e NestJS, interfaces com React, Next.js, Vue.js e Angular, bancos de dados relacionais e integração entre sistemas.
+
+## Competências
+
+- Desenvolvimento de aplicações web e sistemas responsivos.
+- Criação e manutenção de APIs REST e integrações entre sistemas.
+- Tecnologias: Laravel, PHP, Node.js, NestJS, React, Next.js, Vue.js, Angular, MySQL, PostgreSQL e Docker.
+
+## Projetos
+
+O portfólio apresenta trabalhos em sistemas web, sites institucionais, CMS, formulários, notificações, manutenção de sistemas legados e ferramentas internas.
+
+- [Projetos selecionados](https://hugosbss.github.io/portfolio/#works): DIGISAC, Maskmais, Workmonitor, Gustare, Control Arc, Vibrosystems, Dagra e Tudor.
+
+## Conteúdos técnicos
+
+- [Materiais de desenvolvimento web](https://hugosbss.github.io/portfolio/#study-content): estudos sobre Laravel Eloquent ORM, Middleware, autenticação, segurança e JavaScript para frontend.
+- [Demonstração de ScrollFlow.js](https://hugosbss.github.io/portfolio/#scrollflow-video): exemplo de navegação por seções com transições durante a rolagem.
+
+## Contato
+
+- [Portfólio e contato](https://hugosbss.github.io/portfolio/#contact)
+- [GitHub](https://github.com/hugosbss)
+- [LinkedIn](https://www.linkedin.com/in/hugo-wg-silva23/)
