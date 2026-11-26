@@ -187,12 +187,7 @@
         <div class="contact__intro" data-reveal>
           <p class="eyebrow"><span class="eyebrow__dot"></span> Contato</p>
           <h2 id="contact-title">Vamos conversar<br /><span>sobre seu próximo projeto.</span></h2>
-          <p>Deixe seu nome e uma mensagem. Em seguida, escolha se prefere continuar pelo WhatsApp ou por e-mail.</p>
-          <div class="contact__socials" aria-label="Redes e contato direto">
-            <a href="https://github.com/hugosbss" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-            <a href="https://www.linkedin.com/in/hugo-wg-silva23/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-            <a href="mailto:ohugodev@outlook.com">E-mail direto <span aria-hidden="true">↗</span></a>
-          </div>
+          <p></p>
         </div>
         <form class="contact-form" id="contact-form" data-reveal>
           <div class="form-field">
@@ -207,13 +202,13 @@
             <legend>Escolha o canal de envio</legend>
             <label class="channel-option">
               <input type="radio" name="channel" value="whatsapp" checked />
-              <span class="channel-option__icon" aria-hidden="true">WA</span>
+              <span class="channel-option__icon channel-option__icon--whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12.05 2a9.9 9.9 0 0 0-8.46 15.05L2.25 22l5.07-1.33A9.9 9.9 0 1 0 12.05 2Zm0 18.02a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3 .79.8-2.92-.2-.31A8.12 8.12 0 1 1 12.05 20.02Zm4.46-6.08c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.43-.59 1.63-1.16.2-.56.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28Z" /></svg></span>
               <span><strong>WhatsApp</strong><small>Mensagem pronta para enviar</small></span>
               <span class="channel-option__check" aria-hidden="true">✓</span>
             </label>
             <label class="channel-option">
               <input type="radio" name="channel" value="email" />
-              <span class="channel-option__icon" aria-hidden="true">@</span>
+              <span class="channel-option__icon channel-option__icon--email" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3.5 5.5h17v13h-17z" /><path d="m4 6 8 6.2L20 6" /></svg></span>
               <span><strong>E-mail</strong><small>Abre seu aplicativo de e-mail</small></span>
               <span class="channel-option__check" aria-hidden="true">✓</span>
             </label>
@@ -221,6 +216,28 @@
           <button class="button button--primary contact-form__submit" type="submit">Enviar pelo WhatsApp <span aria-hidden="true">↗</span></button>
           <p class="contact-form__hint" id="contact-status" aria-live="polite">A mensagem será preenchida automaticamente no canal escolhido.</p>
         </form>
+        <div class="contact__socials" aria-label="Redes e contato direto" data-reveal>
+          <a class="contact-social contact-social--github" href="https://github.com/hugosbss" target="_blank" rel="noopener noreferrer">
+            <svg class="contact-social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-1.9c-3.1.68-3.76-1.32-3.76-1.32-.5-1.3-1.24-1.65-1.24-1.65-1.02-.7.08-.69.08-.69 1.12.08 1.72 1.15 1.72 1.15 1 .1.6.76.77 1.2.9.77 1.6.62 1.99.48.1-.7.39-1.17.71-1.44-2.48-.28-5.09-1.24-5.09-5.51 0-1.22.44-2.22 1.15-3-.12-.29-.5-1.43.11-2.98 0 0 .94-.3 3.06 1.14a10.62 10.62 0 0 1 5.57 0c2.12-1.44 3.06-1.14 3.06-1.14.61 1.55.23 2.69.11 2.98.72.78 1.15 1.78 1.15 3 0 4.28-2.61 5.23-5.1 5.5.4.35.75 1.02.75 2.06v3.12c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z" /></svg>
+            <span>GitHub</span><span class="contact-social__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="contact-social contact-social--linkedin" href="https://www.linkedin.com/in/hugo-wg-silva23/" target="_blank" rel="noopener noreferrer">
+            <svg class="contact-social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 .02-4.12 2.06 2.06 0 0 1-.02 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.23 0Z" /></svg>
+            <span>LinkedIn</span><span class="contact-social__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="contact-social contact-social--email" href="mailto:ohugodev@outlook.com">
+            <svg class="contact-social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.75 5.75h16.5v12.5H3.75z" /><path d="m4.25 6.25 7.75 6.1 7.75-6.1" /></svg>
+            <span>E-mail direto</span><span class="contact-social__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="contact-social contact-social--discord" href="https://discordapp.com/users/1093962406595661834" target="_blank" rel="noopener noreferrer">
+            <svg class="contact-social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.73 5.1A18.1 18.1 0 0 0 15.3 3.7l-.55 1.13a16.8 16.8 0 0 0-5.5 0L8.7 3.7a18 18 0 0 0-4.43 1.4C1.47 9.24.71 13.29 1.09 17.29a18.2 18.2 0 0 0 5.43 2.75l1.17-1.9a11.8 11.8 0 0 1-1.84-.88l.45-.35a12.9 12.9 0 0 0 11.4 0l.45.35a11.8 11.8 0 0 1-1.84.88l1.17 1.9a18.2 18.2 0 0 0 5.43-2.75c.45-4.64-.77-8.65-3.18-12.19ZM8.69 14.82c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Zm6.62 0c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Z" /></svg>
+            <span>Discord</span><span class="contact-social__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="contact-social contact-social--whatsapp" href="https://wa.me/5514988365367" target="_blank" rel="noopener noreferrer">
+            <svg class="contact-social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.05 2a9.9 9.9 0 0 0-8.46 15.05L2.25 22l5.07-1.33A9.9 9.9 0 1 0 12.05 2Zm0 18.02a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3 .79.8-2.92-.2-.31A8.12 8.12 0 1 1 12.05 20.02Zm4.46-6.08c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.43-.59 1.63-1.16.2-.56.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28Z" /></svg>
+            <span>WhatsApp</span><span class="contact-social__arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
       </section>
     </main>
 
@@ -239,6 +256,11 @@
         <a class="button button--primary" id="dialog-link" href="#" target="_blank" rel="noopener noreferrer">Visitar projeto <span aria-hidden="true">↗</span></a>
       </form>
     </dialog>
+
+    <a class="whatsapp-float" href="https://wa.me/5514988365367" target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp" title="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.05 2a9.9 9.9 0 0 0-8.46 15.05L2.25 22l5.07-1.33A9.9 9.9 0 1 0 12.05 2Zm0 18.02a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3 .79.8-2.92-.2-.31A8.12 8.12 0 1 1 12.05 20.02Zm4.46-6.08c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.43-.59 1.63-1.16.2-.56.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28Z" /></svg>
+      <span>WhatsApp</span>
+    </a>
 
     <script type="module" src="/src/main.js"></script>
   </body>
