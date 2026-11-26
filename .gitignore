@@ -1,2 +1,7 @@
 portfolio-projetos.MD
 hugo.html
+node_modules/
+dist/
+
+.agents/
+.vscode/

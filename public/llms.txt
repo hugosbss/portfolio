@@ -16,15 +16,15 @@ Hugo Silva trabalha no desenvolvimento, manutenção e evolução de aplicaçõe
 
 O portfólio apresenta trabalhos em sistemas web, sites institucionais, CMS, formulários, notificações, manutenção de sistemas legados e ferramentas internas.
 
-- [Projetos selecionados](https://hugosbss.github.io/portfolio/#works): DIGISAC, Maskmais, Workmonitor, Gustare, Control Arc, Vibrosystems, Dagra e Tudor.
+- [Projetos selecionados](https://hugosbss.github.io/portfolio/#projetos): DIGISAC, Maskmais, Workmonitor, Gustare, Control Arc, Vibrosystems, Dagra e Tudor. Quatro projetos ganham destaque em uma navegação visual em profundidade.
 
 ## Conteúdos técnicos
 
-- [Materiais de desenvolvimento web](https://hugosbss.github.io/portfolio/#study-content): estudos sobre Laravel Eloquent ORM, Middleware, autenticação, segurança e JavaScript para frontend.
-- [Demonstração de ScrollFlow.js](https://hugosbss.github.io/portfolio/#scrollflow-video): exemplo de navegação por seções com transições durante a rolagem.
+- [Materiais de desenvolvimento web](https://hugosbss.github.io/portfolio/#conteudos): estudos sobre Laravel Eloquent ORM, Middleware, autenticação, segurança e JavaScript para frontend.
+- [Demonstração de ScrollFlow.js](https://hugosbss.github.io/portfolio/#scrollflow): exemplo de navegação por seções com transições durante a rolagem.
 
 ## Contato
 
-- [Portfólio e contato](https://hugosbss.github.io/portfolio/#contact)
+- [Portfólio e contato](https://hugosbss.github.io/portfolio/#contato)
 - [GitHub](https://github.com/hugosbss)
 - [LinkedIn](https://www.linkedin.com/in/hugo-wg-silva23/)
